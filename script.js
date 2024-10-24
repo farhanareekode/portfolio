@@ -11,3 +11,15 @@ document.querySelectorAll('nav ul li a').forEach(link => {
     });
 });
 
+function toggleMenu() {
+    const navItems = document.getElementById("nav-items");
+    navItems.classList.toggle("show");
+}
+
+// Close the dropdown menu when an item is selected
+document.querySelectorAll('.navbar ul li a').forEach(link => {
+    link.addEventListener('click', () => {
+        const navItems = document.getElementById("nav-items");
+        navItems.classList.remove("show");
+    });
+});

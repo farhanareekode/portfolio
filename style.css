@@ -23,7 +23,7 @@ body {
 
 .navbar .container {
     display: flex;
-    justify-content: center; 
+    justify-content: space-between;
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
@@ -33,7 +33,9 @@ body {
 .navbar ul {
     list-style: none;
     display: flex;
-    justify-content: center; 
+    justify-content: center; /* Center items horizontally */
+    align-items: center; /* Center items vertically */
+    margin: 0 auto; /* Ensure the items are in the center */
 }
 
 .navbar ul li {
@@ -52,12 +54,52 @@ body {
     color: #f39c12;
 }
 
+/* Menu icon for mobile */
+.menu-icon {
+    display: none;
+    color: white;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+/* Mobile view */
+@media (max-width: 768px) {
+    .navbar ul {
+        display: none;
+        flex-direction: column;
+        background-color: rgba(0, 0, 0, 0.9);
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+        text-align: right;
+    }
+
+    .navbar ul.show {
+        display: flex;
+    }
+
+    .navbar ul li {
+        margin: 10px 0;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+}
+
+
 
 /* Section Styles */
 .section {
     padding: 100px 20px;
     text-align: center;
     min-height: 100vh;
+}
+#projects {
+    padding: 50px 20px; /* Reduced padding for projects section */
+    height: auto; /* or fit-content */
+    min-height: 50vh; /* Adjusted min-height */
 }
 
 /* Home Section */
@@ -217,7 +259,8 @@ body {
 
 .projects h2 {
     font-size: 2.5em;
-    margin-bottom: 30px;
+    margin-bottom: 80px;
+
 }
 
 /* Project Grid */
@@ -237,6 +280,8 @@ body {
     width: 350px; 
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); 
     transition: transform 0.3s ease, background-color 0.3s ease; 
+    margin-bottom: 220px; /* Adds space under the projects section */
+
 }
 
 .project-card:hover {
