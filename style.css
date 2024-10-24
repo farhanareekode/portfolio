@@ -290,9 +290,11 @@ body {
     box-shadow: 0 12px 20px rgba(0, 0, 0, 0.5); 
 }
 
+/* Project Image */
 .project-image {
     width: 100%; 
-    height: auto;
+    height: 200px; /* Set a fixed height */
+    object-fit: cover; /* Ensures the image covers the area without distortion */
     border-radius: 10px; 
     margin-bottom: 20px;
 }
@@ -308,10 +310,16 @@ body {
     color: #cccccc; 
 }
 
+/* Mobile view adjustments */
 @media (max-width: 768px) {
+    .project-grid {
+        gap: 15px; /* Reduce gap between cards */
+    }
+
     .project-card {
-        width: 100%; 
-        padding: 30px; 
+        width: 100%; /* Make the cards take full width */
+        padding: 20px; /* Reduce padding */
+        margin-bottom: 50px; /* Reduce the space between cards */
     }
 }
 
