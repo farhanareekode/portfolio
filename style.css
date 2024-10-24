@@ -316,23 +316,7 @@ body {
 }
 
 
-/* Contact Section */
-.contact {
-    background-color: #000000;
-    color: white;
-}
 
-.contact h2 {
-    font-size: 2.5em;
-    margin-bottom: 20px;
-    color: #ffcc00;
-}
-
-.contact p {
-    font-size: 1.1em;
-    max-width: 800px;
-    margin: 0 auto;
-}
 
 /* Footer */
 footer {
@@ -563,28 +547,62 @@ hr.w-50 {
     color: #333;
     transition: border-color 0.3
   }  
+/* Contact Section */
+.contact {
+    background-color: #000000;
+    color: white;
+}
 
-  /* social media */ 
-  .social-links {
+.contact h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #ffcc00;
+}
+
+.contact p {
+    font-size: 1.1em;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Social media section */
+.social-links {
     display: flex;
-    justify-content: space-around;
+    flex-wrap: wrap;  /* Enable wrapping to multiple rows */
+    justify-content: space-between; /* Evenly space the items */
+    gap: 20px; /* Add space between the items */
     margin: 20px 0;
 }
+
 .social-item {
     text-align: center;
+    flex-basis: calc(33.33% - 20px); /* Three items per row in desktop view */
+    box-sizing: border-box; /* Ensure padding and border are included in width */
 }
+
 .social-item i {
     font-size: 60px;
     color: #ffcc00; 
 }
+
 .social-item h3 {
     font-size: 18px;
     margin-top: 10px;
 }
+
 .social-item p {
     font-size: 14px;
-    color: #333;
+    color: #ccc; /* Make text lighter for contrast */
 }
+
+/* Mobile view - Two items per row */
+@media (max-width: 768px) {
+    .social-item {
+        flex-basis: calc(50% - 20px); /* Two items per row */
+    }
+}
+
+
 
 
 .button-container {
